@@ -1,0 +1,7 @@
+# Debug Log
+
+**Explain how you used the VSCode debugger tools to uncover the bugs in Exercise 7. Be specific. What breakpoints did you set? Where did you step to? What made you realize the error?**
+
+_Example: I set a breakpoint on line 5 and stepped until line 12. There, I discovered that the `x` variable had a value of `-3`, whereas it should have had a value of `7`. That made me realize that we should be adding the two numbers `x` and `y`, instead of subtracting._
+
+I started looking at the top of the function going through an example run in my head to get a better idea of how the function plans on replacing the substrings and if there where any obvious bugs I could see. I know understand the functions process and it seems like the code should be working. Since I didn't find any obvious bugs or I missed them, I added some print statements for the current function parameters, for the sentence splits, and breakpoints before both return statments so I can then use VSCodes debugger go through it step by step down the recusion path. I quickly found that there was a bug in getting the remainder of the sentence. Sadly for me, it turns out this could have easily been solved if I just looked at the variable names closer during my first run-through becuase it was splitting using start_string rather than sentence like it should have been. However, there was still a bug in the code so I started taking steps agian until a once agian found the same bug of using the start_string rather than sentence and fixed it. After fixing that bug, the program ran as expected.
