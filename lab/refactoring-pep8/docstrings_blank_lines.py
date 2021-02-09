@@ -2,7 +2,7 @@
 # Docstrings and blank lines
 class OnBoardTemperatureSensor:
     VOLTAGE_TO_TEMP_FACTOR = 5.6
-    
+
     def __init__(self):
         """Creates a new OnboardTemperatreSensor object with a voltage factor of 5.6"""
         pass

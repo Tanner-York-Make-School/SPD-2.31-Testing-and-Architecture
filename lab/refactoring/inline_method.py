@@ -20,4 +20,3 @@ class Person:
 
 person = Person(17.9)
 person.enter_night_club()
-        
