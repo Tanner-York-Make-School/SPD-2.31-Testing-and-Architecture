@@ -9,25 +9,22 @@ def change_gear(str_gear):
 def display_gear(str_gear): 
     print("displayed gear:", str_gear)
 
-def process_speed(speed):
+def get_gear(speed):
     if 0 <= speed < 30:
-        change_gear('1')
-        gear = '1'
-        display_gear(gear)
-    elif 30 <= speed < 50:
-        change_gear('2')
-        gear = '2'
-        display_gear(gear)
-    elif 50 <= speed <= 90:
-        change_gear('3')
-        gear = '3'
-        display_gear(gear)
-    elif 90 <= speed:
-        change_gear('4')
-        gear = '4'
-        display_gear(gear)
-    elif speed <= 0:
-        display_gear('R')
+        return '1'
+    if 30 <= speed < 50:
+        return '2'
+    if 50 <= speed <= 90:
+        return '3'
+    if 90 <= speed:
+        return '4'
+    if speed <= 0:
+        return 'R'
+
+def process_speed(speed):
+    gear = get_gear(speed)
+    change_gear(gear)
+    display_gear(gear)
 
 if __name__ == "__main__":
     process_speed(40)
