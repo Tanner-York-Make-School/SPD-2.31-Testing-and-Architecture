@@ -1,5 +1,9 @@
-# by Kami Bigdely
-# Extract Class
+"""
+By Kami Bigdely
+Refactored by Tanner York
+Extract Class
+"""
+
 foods = {'butternut squash soup':[45, True, 'soup','North African',\
      ['butter squash','onion','carrot', 'garlic','butter','black pepper', 'cinnamon','coconut milk']\
         ,'1. Grill the butter squash, onion, carrot and garlic in the oven until'
@@ -16,17 +20,41 @@ foods = {'butternut squash soup':[45, True, 'soup','North African',\
                 'seasoning 3. Add all the content to a sausage stuffer. Put the casing on'
                 "the stuffer funnel. Rotate the stuffer's handle (or turn it on) to make your yummy sausages!"]}
 
-for key, value in foods.items():
-    print("Name:",key)
-    print("Prep time:",value[0], "mins")
-    print("Is Veggie?", 'Yes' if value[1] else "No")
-    print("Food Type:", value[2])
-    print("Cuisine:", value[3])
-    for item in value[4]:
-        print(item, end=', ')
-    print()
-    print("recipe", value[5])
-    print("***")
+class Recipe():
+    """Class for representing recipes and how tho make them"""
+    def __init__(self, name, prep_time, is_veggie, food_type, cuisine, ingredients, directions):
+        """
+        Creates a new Recipe object from the following info:
+            name (string): name of the recipe
+            ingredients (Array(string)): a list of the recepies ingredients 
+            prep_time (int): minutes it take to make recipe
+            cuisine (string): where the recipe origonated
+            is_veggie (bool): wether the recipe is veggie based
+            info (Array(any)): list of general info like cook time
+            directions(string): the directions for the recipe
+        """
+        self.name = name
+        self.ingredients = ingredients
+        self.prep_time = prep_time
+        self.is_veggie = is_veggie
+        self.type = food_type 
+        self.cuisine = cuisine
+        self.directions = directions
+
+    def describe(self):
+        print("Name:", self.name)
+        print("Prep time:", self.prep_time, "mins")
+        print("Is Veggie?", 'Yes' if self.is_veggie else "No")
+        print("Food Type:", self.type)
+        print("Cuisine:", self.cuisine)
+        for item in self.ingredients:
+            print(item, end=', ')
+        print()
+        print("recipe", self.directions)
+        print("***")
 
 
-
+if __name__ == '__main__':
+    for key, value in foods.items():
+        recipe = Recipe(key, value[0], value[1], value[2], value[3], value[4], value[5])
+        recipe.describe()

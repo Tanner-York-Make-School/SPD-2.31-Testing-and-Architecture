@@ -1,7 +1,9 @@
-# By Kami Bigdely-Shamloo
-# Consolidate duplicate conditional fragments
-# This program changes car's gear according to the car speed. Then it 
-# displays the updated gear on the car's front panel.
+"""
+By Kami Bigdely-Shamloo
+Consolidate duplicate conditional fragments
+This program changes car's gear according to the car speed. Then it 
+displays the updated gear on the car's front panel.
+"""
 
 def change_gear(str_gear):
     print("Gear changed to", str_gear)
